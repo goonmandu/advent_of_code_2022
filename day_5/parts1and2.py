@@ -67,6 +67,7 @@ def main():
     for instr_num, instruction in enumerate(instructions):
         move_elements_reverse_order(part1_stacks, instruction["count"], instruction["origin"], instruction["dest"])
         move_elements_same_order(part2_stacks, instruction["count"], instruction["origin"], instruction["dest"])
+
     print("Part 1: ", end="")
     for stack in part1_stacks:
         print(stack[-1], end="")
