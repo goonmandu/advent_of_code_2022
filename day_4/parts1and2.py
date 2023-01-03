@@ -7,8 +7,7 @@ def zone_fully_overlaps(zone1, zone2):
         return zone1_end >= zone2_end
     elif zone1_start > zone2_start:
         return zone1_end <= zone2_end
-    else:
-        return True
+    return True
 
 
 def zone_overlaps_at_all(zone1, zone2):
@@ -16,10 +15,7 @@ def zone_overlaps_at_all(zone1, zone2):
     zone1_end = int(zone1.split("-")[1])
     zone2_start = int(zone2.split("-")[0])
     zone2_end = int(zone2.split("-")[1])
-    if zone1_end < zone2_start or zone2_end < zone1_start or zone_fully_overlaps(zone1, zone2):
-        return True
-    else:
-        return False
+    return zone1_end >= zone2_start and zone1_start <= zone2_end
 
 
 def main():
